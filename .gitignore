@@ -1,0 +1,12 @@
+# ignore temporary files
+*.swp
+*~
+lib/*
+bin/*
+src/*
+include/*
+build/*
+.Python
+
+# ignore compiled python code
+*.pyc

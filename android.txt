@@ -1,0 +1,4 @@
+title=teamstrong11_9
+author=yourgameauthor
+api=1
+orientation=landscape
