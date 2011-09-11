@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3849"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="New document 4">
+  <defs
+     id="defs3851" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="74.786246"
+     inkscape:cy="882.43322"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3854">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:none"
+       id="rect3857"
+       width="50"
+       height="100"
+       x="38.92857"
+       y="92.719322"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#e9b96e;fill-opacity:0.66810345;stroke:none"
+       d="m 78.504464,93.848214 c -3.350752,0 -6.0625,2.702374 -6.0625,6.03125 0,0.01092 -5.8e-5,0.02034 0,0.03125 -1.838126,-0.49743 -3.801996,-0.75 -5.8125,-0.75 -3.961057,0 -7.634586,1.048186 -10.78125,2.843746 -0.639909,-2.647413 -3.0139,-4.624996 -5.875,-4.624996 -3.350752,0 -6.0625,2.702376 -6.0625,6.031246 0,2.80227 1.923393,5.13734 4.53125,5.8125 -1.602652,2.738 -2.5,5.88105 -2.5,9.21875 0,10.65121 9.247316,19.28125 20.6875,19.28125 11.440184,0 20.71875,-8.63004 20.71875,-19.28125 0,-5.18789 -2.202257,-9.90868 -5.78125,-13.375 1.802072,-1.04506 3,-2.96496 3,-5.187496 0,-3.328876 -2.711748,-6.03125 -6.0625,-6.03125 z"
+       id="path3859"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#729fcf;fill-opacity:0.66810345;stroke:none"
+       id="rect4369"
+       width="39.285713"
+       height="54.285713"
+       x="44.642857"
+       y="137.71933"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#2e3436;stroke:none"
+       id="path4371"
+       sodipodi:cx="74.285713"
+       sodipodi:cy="118.79076"
+       sodipodi:rx="7.8571429"
+       sodipodi:ry="5.7142859"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       transform="matrix(0.40404758,-0.24824038,0.33373275,0.41746295,6.9166757,92.203865)"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(1,0,0,1.375,-10.5,-48.475104)"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       sodipodi:ry="5.7142859"
+       sodipodi:rx="7.8571429"
+       sodipodi:cy="118.79076"
+       sodipodi:cx="74.285713"
+       id="path4373"
+       style="fill:#2e3436;stroke:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#2e3436;stroke:none"
+       id="path4375"
+       sodipodi:cx="74.285713"
+       sodipodi:cy="118.79076"
+       sodipodi:rx="7.8571429"
+       sodipodi:ry="5.7142859"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       transform="matrix(0.81818182,0,0,1.25,17.292208,-37.197688)"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.27477495,0,0,0.39644663,47.072778,65.968767)"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       sodipodi:ry="5.7142859"
+       sodipodi:rx="7.8571429"
+       sodipodi:cy="118.79076"
+       sodipodi:cx="74.285713"
+       id="path4377"
+       style="fill:#eeeeec;stroke:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#eeeeec;stroke:none"
+       id="path4379"
+       sodipodi:cx="74.285713"
+       sodipodi:cy="118.79076"
+       sodipodi:rx="7.8571429"
+       sodipodi:ry="5.7142859"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       transform="matrix(0.27477495,0,0,0.39644663,60.33103,63.064578)"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#2e3436;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 64.394867,128.21681 c 0,0 6.187184,6.31346 9.848987,4.79823"
+       id="path4381"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="92.719322"
+       x="88.928574"
+       height="100"
+       width="50"
+       id="rect4401"
+       style="fill:none;stroke:none"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4403"
+       d="m 124.50446,93.848214 c -3.35075,0 -6.0625,2.702374 -6.0625,6.03125 0,0.01092 -5e-5,0.02034 0,0.03125 -1.83812,-0.49743 -3.80199,-0.75 -5.8125,-0.75 -3.96105,0 -7.63458,1.048186 -10.78125,2.843746 -0.63991,-2.647413 -3.0139,-4.624996 -5.874996,-4.624996 -3.350752,0 -6.0625,2.702376 -6.0625,6.031246 0,2.80227 1.923393,5.13734 4.53125,5.8125 -1.602652,2.738 -2.5,5.88105 -2.5,9.21875 0,10.65121 9.247316,19.28125 20.687496,19.28125 11.44019,0 20.71875,-8.63004 20.71875,-19.28125 0,-5.18789 -2.20225,-9.90868 -5.78125,-13.375 1.80208,-1.04506 3,-2.96496 3,-5.187496 0,-3.328876 -2.71174,-6.03125 -6.0625,-6.03125 z"
+       style="fill:#e9b96e;fill-opacity:0.66810345;stroke:none"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="137.71933"
+       x="94.64286"
+       height="54.285713"
+       width="39.285713"
+       id="rect4405"
+       style="fill:#729fcf;fill-opacity:0.66810345;stroke:none"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.40404758,-0.24824038,0.33373275,0.41746295,52.916676,92.203865)"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       sodipodi:ry="5.7142859"
+       sodipodi:rx="7.8571429"
+       sodipodi:cy="118.79076"
+       sodipodi:cx="74.285713"
+       id="path4407"
+       style="fill:#2e3436;stroke:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#2e3436;stroke:none"
+       id="path4409"
+       sodipodi:cx="74.285713"
+       sodipodi:cy="118.79076"
+       sodipodi:rx="7.8571429"
+       sodipodi:ry="5.7142859"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       transform="matrix(1,0,0,1.375,35.5,-48.475104)"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.81818182,0,0,1.25,63.292208,-37.197688)"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       sodipodi:ry="5.7142859"
+       sodipodi:rx="7.8571429"
+       sodipodi:cy="118.79076"
+       sodipodi:cx="74.285713"
+       id="path4411"
+       style="fill:#2e3436;stroke:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#eeeeec;stroke:none"
+       id="path4413"
+       sodipodi:cx="74.285713"
+       sodipodi:cy="118.79076"
+       sodipodi:rx="7.8571429"
+       sodipodi:ry="5.7142859"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       transform="matrix(0.27477495,0,0,0.39644663,93.072778,65.968767)"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.27477495,0,0,0.39644663,106.33103,63.064578)"
+       d="m 82.142856,118.79076 a 7.8571429,5.7142859 0 1 1 -15.714286,0 7.8571429,5.7142859 0 1 1 15.714286,0 z"
+       sodipodi:ry="5.7142859"
+       sodipodi:rx="7.8571429"
+       sodipodi:cy="118.79076"
+       sodipodi:cx="74.285713"
+       id="path4415"
+       style="fill:#eeeeec;stroke:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4417"
+       d="m 110.39487,128.21681 c 0,0 6.18718,6.31346 9.84898,4.79823"
+       style="fill:none;stroke:#2e3436;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#e8b86e;fill-opacity:0.66666667;stroke:none"
+       id="path4428"
+       sodipodi:cx="145.35715"
+       sodipodi:cy="128.79076"
+       sodipodi:rx="4.2857141"
+       sodipodi:ry="4.6428571"
+       d="m 149.64286,128.79076 a 4.2857141,4.6428571 0 1 1 -8.57143,0 4.2857141,4.6428571 0 1 1 8.57143,0 z"
+       transform="matrix(0.96378471,-0.26668153,0.30770947,1.1120593,-116.83663,54.386474)"
+       inkscape:transform-center-x="1.3992144"
+       inkscape:transform-center-y="-16.731113"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:transform-center-y="-14.870212"
+       inkscape:transform-center-x="-7.7951686"
+       transform="matrix(0.95641827,0.29200015,-0.33692326,1.1035596,38.094112,-46.009177)"
+       d="m 149.64286,128.79076 a 4.2857141,4.6428571 0 1 1 -8.57143,0 4.2857141,4.6428571 0 1 1 8.57143,0 z"
+       sodipodi:ry="4.6428571"
+       sodipodi:rx="4.2857141"
+       sodipodi:cy="128.79076"
+       sodipodi:cx="145.35715"
+       id="path4430"
+       style="fill:#e8b86e;fill-opacity:0.66666667;stroke:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>
