@@ -3,6 +3,8 @@ from __future__ import print_function
 import pyglet
 
 from level import Level
+from pyglet import window
+from pyglet import clock
 import data
 import settings
 
@@ -95,12 +97,16 @@ class GameWindow(pyglet.window.Window):
         super(GameWindow, self).__init__(*args, **kwargs)
         self.running = True
         self.create_level()
-
         self.background = load(fp('background.png'))
+        clock.set_fps_limit(settings.FPS_LIMIT)
+        clock.schedule(self.update)
 
     def create_level(self):
         self.level = Level(self)
         self.level.connect()
+
+    def update(self, dt):
+        self.dispatch_event('on_update', dt)
 
     def on_draw(self):
         self.clear()
@@ -137,5 +143,6 @@ class GameWindow(pyglet.window.Window):
         sprites[0].right()
 
     def quit(self):
-        self.running = False
-        print("Not implemented yet...")
+        self.has_exit = True
+
+GameWindow.register_event_type('on_update')
