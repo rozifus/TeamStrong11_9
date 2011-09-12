@@ -1,13 +1,13 @@
 from __future__ import print_function
 
 import pyglet
-from game_window import GameWindow
 
-res = (800, 600)
+from game_window import GameWindow
+import settings
+
 
 def main():
     """ your app starts here
     """
-    
-    gameWindow = GameWindow(*res)
-    pyglet.app.run()    
+    gameWindow = GameWindow(*settings.RESOLUTION)
+    pyglet.app.run()
