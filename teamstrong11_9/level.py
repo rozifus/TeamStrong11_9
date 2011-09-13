@@ -7,7 +7,7 @@ from pyglet.window import mouse, key
 
 import data
 import camera
-from character import Character, Enemy
+from character import Player, Enemy
 from shortcuts import *
 
 class Level(event.EventDispatcher):
@@ -26,7 +26,7 @@ class Level(event.EventDispatcher):
 
     # Setup the level
     def initialize(self):
-        self.player = Character(batch=self.batch)
+        self.player = Player(self, batch=self.batch)
         self.sprites.append(self.player)
 
         #self.sprites.append(Enemy(batch=self.batch))
@@ -43,10 +43,10 @@ class Level(event.EventDispatcher):
     # Gets called once per tick by the game_window
     def on_update(self, dt):
         #not being used currently
-        self.dispatch_event('level_update', dt, self.camera)
+        self.dispatch_event('on_level_update', dt, self.camera)
         #being used currently
-        for s in self.sprites:
-            s.update(dt)
+        #for s in self.sprites:
+        #    s.update(dt)
 
     # Gets called once per tick by the game loop
     def on_draw(self):
@@ -76,18 +76,18 @@ class Level(event.EventDispatcher):
         Move character left.
         """
         if self.player:
-            self.player.left()
+            self.player.step_left()
 
     def handle_right_down(self):
         """
         Move character right.
         """
         if self.player:
-            self.player.right()
+            self.player.step_right()
     
     def handle_quit(self):
         self.p_window.quit()
 
-Level.register_event_type('level_update')
+Level.register_event_type('on_level_update')
 
  
