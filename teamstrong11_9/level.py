@@ -26,16 +26,10 @@ class Level(event.EventDispatcher):
 
     # Setup the level
     def initialize(self):
-        self.player = Character(
-                pyglet.image.ImageGrid(
-                    load(fp('character.png')), 1, 2), batch=self.batch)
+        self.player = Character(batch=self.batch)
         self.sprites.append(self.player)
 
-        self.sprites.append(            
-            Enemy(
-                pyglet.image.ImageGrid(
-                    load(fp('enemy.png')), 1, 2), batch=self.batch)
-                    )
+        #self.sprites.append(Enemy(batch=self.batch))
 
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):

@@ -30,11 +30,12 @@ class GameWindow(pyglet.window.Window):
         clock.set_fps_limit(settings.FPS_LIMIT)
         # Setup updates to run once per tick
         clock.schedule(self.update)
-        # Create the level and connect
+
         self.create_level()
 
     def create_level(self):
         self.level = Level(self)
+        # Get level to push its handlers to us
         self.level.connect()
 
     # Scheduled to run once per tick
@@ -45,4 +46,5 @@ class GameWindow(pyglet.window.Window):
         # pyglet exit variable built into pyglet.window.Window
         self.has_exit = True
 
+# Allows handlers to be pushed to the game_window dispatcher
 GameWindow.register_event_type('on_update')
