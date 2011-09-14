@@ -54,11 +54,12 @@ class Character(pyglet.sprite.Sprite):
 
     image_file = None
 
-    def __init__(self, *args, **kws):
+    def __init__(self, p_level, *args, **kws):
         self.anim_default = Animation.from_image_sequence(ImageGrid(load(fp(
                     self.image_file)), 1, 2), 5, True)
         applyAnchor(self.anim_default, 25, 0)
         super(Character, self).__init__(self.anim_default, *args, **kws)
+        self.p_level = p_level
         self.movement = None
 
     def on_level_update(self, dt, camera):
@@ -69,8 +70,7 @@ class Character(pyglet.sprite.Sprite):
 class Player(Character):
     image_file = 'character.png'
     def __init__(self, p_level, *args, **kws):
-        self.p_level = p_level
-        super(Player, self).__init__(*args, **kws)
+        super(Player, self).__init__(p_level, *args, **kws)
         ig_step = ImageGrid(load(fp('panda_bounce_test.png')), 1, 7)
         self.animation = self.anim_default
         self.anim_step_right = Animation.from_image_sequence(

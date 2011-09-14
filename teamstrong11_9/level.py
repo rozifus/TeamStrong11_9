@@ -29,7 +29,7 @@ class Level(event.EventDispatcher):
         self.player = Player(self, batch=self.batch)
         self.sprites.append(self.player)
 
-        self.sprites.append(Enemy(batch=self.batch))
+        self.sprites.append(Enemy(self, batch=self.batch))
 
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):
