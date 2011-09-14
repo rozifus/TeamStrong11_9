@@ -17,26 +17,22 @@ def applyAnchor(img, x, y):
         
 class linearMoveX:
     def __init__(self, target, distance, steps, rate):
-        self.clocked = 0 
+        self.clocked = 0.0 
+        self.rate = rate
         self.steps = steps
         self.distance = distance
         self.target = target
-        pyglet.clock.schedule_interval(self.addClock, rate)
 
-    def addClock(self, dt):
-        self.clocked += 1
-
-    def next(self):
+    def next(self, dt):
+        self.clocked += dt 
         if self.steps > 0:
-            if self.clocked > 0:
+            while self.clocked > self.rate:
                 self.target.x += self.distance
-                self.clocked -= 1
+                self.clocked -= self.rate 
                 self.steps -= 1
                 return True
-            else: 
-                return True
+            return True
         else: 
-            pyglet.clock.unschedule(self.addClock)
             return False
         
 #------------------------------------------------------------
@@ -52,7 +48,7 @@ class Character(pyglet.sprite.Sprite):
     
     def on_level_update(self, dt, camera):
         if self.movement:
-            if not self.movement.next():
+            if not self.movement.next(dt):
                 self.movement = None
 
 class Player(Character):
