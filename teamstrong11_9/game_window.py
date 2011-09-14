@@ -51,7 +51,7 @@ class GameWindow(pyglet.window.Window):
                 'Play Game': self.remove_menu_load_level,
                 'Help!'    : partial(show_help, self,
                                      self.menubatch, self.menugroup, theme),
-                'Quit'     : self.quit,
+                'Quit'     : pyglet.app.exit,
         }
 
         def on_select(choice):
@@ -59,7 +59,7 @@ class GameWindow(pyglet.window.Window):
 
         self.background = load(fp('background.png'))
 
-        dialog = kytten.Dialog(
+        self.dialog = kytten.Dialog(
                 kytten.TitleFrame("Altered Panda",
                     kytten.VerticalLayout([
                         kytten.Menu(options=[
@@ -77,6 +77,7 @@ class GameWindow(pyglet.window.Window):
 
     def remove_menu_load_level(self):
         self.on_draw = lambda: None
+        self.pop_handlers()
         self.create_level()
 
     def on_draw(self):
