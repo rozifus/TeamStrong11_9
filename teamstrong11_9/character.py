@@ -56,7 +56,7 @@ class Character(pyglet.sprite.Sprite):
 
     def __init__(self, p_level, *args, **kws):
         self.anim_default = Animation.from_image_sequence(ImageGrid(load(fp(
-                    self.image_file)), 1, 2), 5, True)
+                    self.image_file)), 1, 1), 5, True)
         applyAnchor(self.anim_default, 25, 0)
         super(Character, self).__init__(self.anim_default, *args, **kws)
         self.p_level = p_level
@@ -82,7 +82,7 @@ class Player(Character):
 
     def init(self):
         self.x = 100
-        self.y = 200
+        self.y = 198
         self.p_level.push_handlers( self.on_level_update)
 
     def step_left(self):
