@@ -1,10 +1,10 @@
-Your Game Title
-===============
+Altered Panda
+=============
 
-Entry in PyWeek #12  <http://www.pyweek.org/12/>
+Entry in PyWeek #13  <http://www.pyweek.org/13/>
 URL: http://www.pyweek.org/e/teamstrong/
-Team: YOUR TEAM NAME (leave the "Team: bit")
-Members: YOUR TEAM MEMBERS (leave the "Members: bit")
+Team: teamstrong
+Members: rozifus, danaran, jtrain
 License: see LICENSE.txt
 
 
@@ -21,11 +21,7 @@ Othewise open a terminal / console and "cd" to the game directory and run:
 How to Play the Game
 --------------------
 
-
-
 Move the cursor around the screen with the mouse.
-
-Press the left mouse button to fire the ducks.
 
 
 Development notes 
@@ -48,4 +44,9 @@ Upload to the Python Package Index with::
 
    python setup.py register
    python setup.py sdist upload
+
+Acknowlegments
+--------------
+
+We use Kytten for the menu system: Accessed http://code.google.com/p/kytten/
 
