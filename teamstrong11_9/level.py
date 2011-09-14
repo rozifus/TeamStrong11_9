@@ -29,7 +29,7 @@ class Level(event.EventDispatcher):
         self.player = Player(self, batch=self.batch)
         self.sprites.append(self.player)
 
-        #self.sprites.append(Enemy(batch=self.batch))
+        self.sprites.append(Enemy(batch=self.batch))
 
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):
@@ -42,11 +42,7 @@ class Level(event.EventDispatcher):
 
     # Gets called once per tick by the game_window
     def on_update(self, dt):
-        #not being used currently
         self.dispatch_event('on_level_update', dt, self.camera)
-        #being used currently
-        #for s in self.sprites:
-        #    s.update(dt)
 
     # Gets called once per tick by the game loop
     def on_draw(self):

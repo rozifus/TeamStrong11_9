@@ -14,62 +14,64 @@ def applyAnchor(img, x, y):
     else:
         img.anchor_x = x
         img.anchor_y = y
-        
+
 class linearMoveX:
     def __init__(self, target, distance, steps, rate):
-        self.clocked = 0.0 
+        self.clocked = 0.0
         self.rate = rate
         self.steps = steps
         self.distance = distance
         self.target = target
 
     def next(self, dt):
-        self.clocked += dt 
+        self.clocked += dt
         if self.steps > 0:
             while self.clocked > self.rate:
                 self.target.x += self.distance
-                self.clocked -= self.rate 
+                self.clocked -= self.rate
                 self.steps -= 1
                 return True
             return True
-        else: 
+        else:
             return False
-        
+
 #------------------------------------------------------------
 # basic character.
-
-"""
-A character is made from more than one image.
-Some for punching, some for walking etc.
-
-The left and right actions are called from the main window
-`on_key_press`. It is all very hardcoded. And i'm sure there is a
-way to push the handlers directly from the character instead of
-having the window do it.
-
-Every time the left or right button is pressed, toggle_man is called
-which swiches the "image" to blit for the sprite.
-"""
 class Character(pyglet.sprite.Sprite):
+
+    """
+    A character is made from more than one image.
+    Some for punching, some for walking etc.
+
+    The left and right actions are called from the main window
+    `on_key_press`. It is all very hardcoded. And i'm sure there is a
+    way to push the handlers directly from the character instead of
+    having the window do it.
+
+    Every time the left or right button is pressed, toggle_man is called
+    which swiches the "image" to blit for the sprite.
+    """
+
+    image_file = None
+
     def __init__(self, *args, **kws):
         self.anim_default = Animation.from_image_sequence(ImageGrid(load(fp(
-                    'character.png')), 1,2), 5, True) 
+                    self.image_file)), 1, 2), 5, True)
         applyAnchor(self.anim_default, 25, 0)
         super(Character, self).__init__(self.anim_default, *args, **kws)
         self.movement = None
-    
+
     def on_level_update(self, dt, camera):
         if self.movement:
             if not self.movement.next(dt):
                 self.movement = None
 
 class Player(Character):
+    image_file = 'character.png'
     def __init__(self, p_level, *args, **kws):
         self.p_level = p_level
         super(Player, self).__init__(*args, **kws)
         ig_step = ImageGrid(load(fp('panda_bounce_test.png')), 1, 7)
-        self.anim_default = Animation.from_image_sequence(ImageGrid(load(fp(
-                    'character.png')), 1,2), 5, True) 
         self.animation = self.anim_default
         self.anim_step_right = Animation.from_image_sequence(
                                 ig_step, 0.1, False)
@@ -96,11 +98,14 @@ class Enemy(Character):
     """
     An enemy is no laughing matter.
     """
+    image_file = 'enemy.png'
+
     def init(self):
         self.x = 700
         self.y = 200
+        self.p_level.push_handlers(self.on_level_update)
 
-    def update(self, dt):
+    def on_level_update(self, dt, camera):
         """
         Keep moving left!
         """
