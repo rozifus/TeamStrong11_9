@@ -38,6 +38,18 @@ class linearMoveX:
 #------------------------------------------------------------
 # basic character.
 
+"""
+A character is made from more than one image.
+Some for punching, some for walking etc.
+
+The left and right actions are called from the main window
+`on_key_press`. It is all very hardcoded. And i'm sure there is a
+way to push the handlers directly from the character instead of
+having the window do it.
+
+Every time the left or right button is pressed, toggle_man is called
+which swiches the "image" to blit for the sprite.
+"""
 class Character(pyglet.sprite.Sprite):
     def __init__(self, *args, **kws):
         self.anim_default = Animation.from_image_sequence(ImageGrid(load(fp(
