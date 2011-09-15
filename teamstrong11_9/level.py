@@ -33,8 +33,7 @@ class Level(event.EventDispatcher):
 
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):
-        self.p_window.push_handlers( self.on_update, self.on_draw, 
-                                     self.on_key_press )
+        self.p_window.push_handlers( self.on_update, self.on_draw ) 
 
     # Pop the window's newest added handlers, hopefully this level's!
     def disconnect(self):
@@ -57,6 +56,7 @@ class Level(event.EventDispatcher):
         """
         handlers = {
                 key.ESCAPE: self.handle_quit,
+                pyglet.window.key.UP: self.handle_up_down,
                 pyglet.window.key.LEFT: self.handle_left_down,
                 pyglet.window.key.RIGHT: self.handle_right_down}
 
@@ -67,19 +67,29 @@ class Level(event.EventDispatcher):
         else:
             handler()
 
+    def handle_up_down(self):
+        """
+        Make character jump.
+        """
+        if self.player:
+            if not self.player.movement:
+                self.player.jump()
+
     def handle_left_down(self):
         """
         Move character left.
         """
-        if self.player:
-            self.player.step_left()
+        if self.player: 
+            if not self.player.movement:
+                self.player.step_left()
 
     def handle_right_down(self):
         """
         Move character right.
         """
         if self.player:
-            self.player.step_right()
+            if not self.player.movement:
+                self.player.step_right()
     
     def handle_quit(self):
         self.p_window.quit()

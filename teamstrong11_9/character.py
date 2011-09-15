@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import pyglet
+from pyglet.window import key
 from pyglet.image import ImageGrid, Animation
 import settings
 from shortcuts import *
@@ -15,7 +16,42 @@ def applyAnchor(img, x, y):
         img.anchor_x = x
         img.anchor_y = y
 
-class linearMoveX:
+class DefaultMove:
+    def __init__(self, target):
+        self.target = target
+        
+    def next(self, dt, keys):
+        if keys:
+            if keys[key.UP]:
+                self.target.jump()
+            elif keys[key.LEFT]:
+                self.target.step_left()
+            elif keys[key.RIGHT]:
+                self.target.step_right()
+        return True
+
+class JumpMove:
+    def __init__(self, target, jumppower, maxjump, control):
+        self.target = target
+        self.jumppower = jumppower 
+        self.maxjump = maxjump
+        self.control = control
+       
+    def next(self, dt, keys):
+        if keys:
+            if not keys[key.UP]:
+                self.maxjump = 0 
+            if keys[key.RIGHT]: self.target.x += self.control
+            if keys[key.LEFT]: self.target.x -= self.control
+       
+        if self.maxjump > 0:
+            self.target.y += self.jumppower 
+            self.maxjump -= self.jumppower 
+            return True
+        else: 
+            return False
+
+class LinearMoveX:
     def __init__(self, target, distance, steps, rate):
         self.clocked = 0.0
         self.rate = rate
@@ -23,7 +59,7 @@ class linearMoveX:
         self.distance = distance
         self.target = target
 
-    def next(self, dt):
+    def next(self, dt, keys):
         self.clocked += dt
         if self.steps > 0:
             while self.clocked > self.rate:
@@ -61,11 +97,16 @@ class Character(pyglet.sprite.Sprite):
         super(Character, self).__init__(self.anim_default, *args, **kws)
         self.p_level = p_level
         self.movement = None
+        self.keys = None
 
     def on_level_update(self, dt, camera):
         if self.movement:
-            if not self.movement.next(dt):
-                self.movement = None
+            if not self.movement.next(dt, self.keys):
+                print("test")
+                self.movement = DefaultMove(self) 
+        else:
+            print("test2")
+            self.movement = DefaultMove(self)
 
 class Player(Character):
     image_file = 'character.png'
@@ -77,6 +118,8 @@ class Player(Character):
                                 ig_step, 0.1, False)
         applyAnchor(self.anim_step_right, 25, 0)
         self.anim_step_left = self.anim_step_right.get_transform(True)
+        # Convenience class for key handling, pushed to window
+        self.keys = key.KeyStateHandler()
 
         self.init()
 
@@ -84,14 +127,18 @@ class Player(Character):
         self.x = 100
         self.y = 198
         self.p_level.push_handlers( self.on_level_update)
+        self.p_level.p_window.push_handlers( self.keys )
 
     def step_left(self):
-        self.movement = linearMoveX(self, -3, 7, 0.1)
+        self.movement = LinearMoveX(self, -3, 7, 0.1)
         self.image = self.anim_step_left
 
     def step_right(self):
-        self.movement = linearMoveX(self, 3, 7, 0.1)
+        self.movement = LinearMoveX(self, 3, 7, 0.1)
         self.image = self.anim_step_right
+
+    def jump(self):
+        self.movement = JumpMove(self, 2, 20, 4)
 
 
 class Enemy(Character):
