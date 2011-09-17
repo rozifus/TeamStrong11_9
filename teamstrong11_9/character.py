@@ -1,5 +1,6 @@
 from __future__ import print_function
 from math import copysign
+from functools import wraps
 
 import pyglet
 from pyglet.window import key
@@ -7,6 +8,18 @@ from pyglet.image import ImageGrid, Animation
 import settings
 from shortcuts import *
 
+
+#---------------------------------------------------
+
+# Library code.
+
+def must_be_alive(fn):
+    @wraps(fn)
+    def inner_fn(self, *args):
+        if not self.alive:
+            return
+        return fn(self, *args)
+    return inner_fn
 
 def applyAnchor(img, x, y):
     if isinstance(img, pyglet.image.Animation):
@@ -16,6 +29,8 @@ def applyAnchor(img, x, y):
     else:
         img.anchor_x = x
         img.anchor_y = y
+
+#---------------------------------------------------
 
 class PlayerMovement:
     def __init__(self):
@@ -180,18 +195,28 @@ class Enemy(pyglet.sprite.Sprite):
         self.init()
 
     def init(self):
+        self.alive = True
         self.x = 700
         self.y = 200
         self.parent.push_handlers(self.on_level_update)
 
+    def set_dead(self):
+        self.alive = False
+        self.x = 700
+        self.y = 400
+
+    @must_be_alive
     def on_level_update(self, dt, camera):
         """
         Now try to head toward the player!.
         """
         player = self.parent.player
 
-
         deltax = player.x - self.x
+        if abs(deltax) < 5:
+            # ok I have hit the player.
+            self.set_dead()
+
         distance = 50 * dt
 
         # only move the ghost guy if the player is not looking.
