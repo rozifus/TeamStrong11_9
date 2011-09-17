@@ -18,7 +18,7 @@ while True:
 
     # start up a new game, now begin polling for changes.
     original = set(timestamps('teamstrong11_9'))
-    pygame = subprocess.Popen(['./bin/python', 'run_game.py'])
+    pygame = subprocess.Popen(['python', 'run_game.py'])
 
     # poll poll poll, eventually the modified timestamp will change.
     while True:
