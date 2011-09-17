@@ -1,4 +1,5 @@
 from __future__ import print_function
+from math import copysign
 
 import pyglet
 from pyglet.window import key
@@ -185,15 +186,23 @@ class Enemy(pyglet.sprite.Sprite):
 
     def on_level_update(self, dt, camera):
         """
-        Keep moving left!
+        Now try to head toward the player!.
         """
-        self.x = self.x - 50 * dt
+        player = self.parent.player
+
+        deltax = player.x - self.x
+        distance = 50 * dt
+
+        self.x = self.x + copysign(min(distance, abs(deltax)), deltax)
         self.image = self.images[0]
 
         if isoffscreen(self.x, self.y):
             self.x, self.y = 700, 200
 
 def isoffscreen(x, y):
+    """
+    Returns True if the (x, y) co-ordinate is off screen.
+    """
     return (x < 0 or x > settings.RESOLUTION[0]
             or y < 0 or y > settings.RESOLUTION[1])
 
