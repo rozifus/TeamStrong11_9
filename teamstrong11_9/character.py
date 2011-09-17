@@ -7,6 +7,7 @@ from pyglet.window import key
 from pyglet.image import ImageGrid, Animation
 import settings
 from shortcuts import *
+from collision_box import CollisionBox
 
 #---------------------------------------------------
 
@@ -43,10 +44,12 @@ class DefaultMove:
         if keys:
             if keys[key.UP]:
                 self.target.jump()
-            elif keys[key.LEFT]:
+            if keys[key.LEFT]:
                 self.target.step_left()
-            elif keys[key.RIGHT]:
+            if keys[key.RIGHT]:
                 self.target.step_right()
+            if keys[key.SPACE]:
+                self.target.punch()
         return True
 
 class JumpMove:
@@ -65,6 +68,7 @@ class JumpMove:
                 self.maxjump = 0 
             if keys[key.RIGHT]: self.target.step_right()
             if keys[key.LEFT]: self.target.step_left()
+            if keys[key.SPACE]: self.target.punch()
        
         if self.maxjump > 0:
             self.target.velocity_y = self.jumppower 
@@ -84,6 +88,8 @@ class LinearMoveX:
         if keys:
             if keys[key.UP]:
                 self.target.jump()
+            if keys[key.SPACE]:
+                self.target.punch()
             if self.distance < 0:
                 if not keys[key.LEFT]:
                     return False
@@ -128,7 +134,7 @@ class Character(pyglet.sprite.Sprite):
         self.velocity_y = 0
         self.touch_ground = True
         self.orientation_right = True
-
+        
     def on_level_update(self, dt, camera):
         self.y += self.velocity_y * dt
         if self.movement:
@@ -154,7 +160,16 @@ class Player(Character):
         self.default_movement = DefaultMove(self)
         self.movement = self.default_movement
 
+        self.collision_box = property(self.get_collision_box, None)
+        self.attack_box = property(self.get_attack_box, None)
+
         self.init()
+
+    def get_collision_box(self):
+        return CollisionBox(self.x-25, self.y, 50, 100, 0)
+    
+    def get_attack_box(self):
+        return CollisionBox(self.x+15, self.y+40, 40, 10, 0)
 
     def init(self):
         self.x = 100
@@ -165,20 +180,25 @@ class Player(Character):
     def step_left(self):
         self.orientation_right = False
         if self.touch_ground:
-            self.movement = LinearMoveX(self, -3, 0.1)
+            self.movement = LinearMoveX(self, -1, 0.02)
             self.image = self.anim_step_left
         else: self.x -= 1
 
     def step_right(self):
         self.orientation_right = True 
         if self.touch_ground:
-            self.movement = LinearMoveX(self, 3, 0.1)
+            self.movement = LinearMoveX(self, 1, 0.02)
             self.image = self.anim_step_right
         else: self.x += 1
 
     def jump(self):
         if self.touch_ground:
             self.movement = JumpMove(self, 200, 4)
+
+    def punch(self):
+        print("Punch")
+        self.p_level.char_punch(self.get_attack_box())
+        
 
 
 class Enemy(pyglet.sprite.Sprite):
@@ -191,6 +211,7 @@ class Enemy(pyglet.sprite.Sprite):
         self.images = ImageGrid(load(fp(self.image_file)), 1, 2)
         super(Enemy, self).__init__(self.images[0], *args, **kwargs)
         self.parent = parent
+        self.collision_box = property(self.get_collision_box, None)
         self.init()
 
     @property
@@ -202,6 +223,9 @@ class Enemy(pyglet.sprite.Sprite):
         self.x = 700
         self.y = 200
         self.parent.push_handlers(self.on_level_update)
+    
+    def get_collision_box(self):
+        return CollisionBox(self.x-25, self.y, 50, 100, 0)
 
     def set_dead(self):
         self.alive = False

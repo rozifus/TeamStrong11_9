@@ -30,6 +30,7 @@ class Level(event.EventDispatcher):
         self.player = None
         self.surface_y = 195
         self.gravitoids = []
+        self.enemies = []
 
         self.initialize()
 
@@ -47,6 +48,10 @@ class Level(event.EventDispatcher):
         # will be a list of GhostOutcome tuples (ghost, win? True/False)
         self.ghosts_of_christmas_past = []
 
+        enemy = Enemy(self, batch=self.batch)
+        self.sprites.append(enemy)
+        self.enemies.append(enemy)
+
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):
         self.p_window.push_handlers( self.on_update, self.on_draw )
@@ -57,7 +62,13 @@ class Level(event.EventDispatcher):
 
     # Gets called once per tick by the game_window
     def on_update(self, dt):
+        player_box = self.player.get_collision_box()
+        for e in self.enemies:
+            if e.get_collision_box().isCollide(*player_box.get_values()):
+                print("DED!")
+
         self.do_gravity(dt)
+        
         self.dispatch_event('on_level_update', dt, self.camera)
         self.game_strategy(dt)
 
@@ -86,6 +97,11 @@ class Level(event.EventDispatcher):
                 g.touch_ground = True
             else:
                 g.velocity_y -= settings.GRAVITY * dt
+
+    def char_punch(self, attack_box):
+        for e in self.enemies:
+            if attack_box.isCollide(*e.get_collision_box().get_values()):
+                print("hit!")
 
     # Gets called once per tick by the game loop
     def on_draw(self):
