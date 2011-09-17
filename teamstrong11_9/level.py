@@ -11,6 +11,7 @@ from pyglet.window import mouse, key
 import data
 import camera
 from character import Player, Enemy
+from countdown import Countdown
 from shortcuts import *
 import settings
 
@@ -38,7 +39,9 @@ class Level(event.EventDispatcher):
         self.gravitoids.append(self.player)
         self.sprites.append(self.player)
 
-        self.sprites.append(Enemy(self, batch=self.batch))
+        # a countdown clock. Countdown to success.
+        self.timer = Countdown(self, batch=self.batch)
+        self.sprites.append(self.timer)
 
         # winning and losing ghosts.
         # will be a list of GhostOutcome tuples (ghost, win? True/False)
@@ -62,14 +65,18 @@ class Level(event.EventDispatcher):
         """
         Game strategising comes into play here.
 
-        At the moment I have it so that a new enemy appears quite randomly
-        actually. Quite randomly indeed.
+        A countdown is created and then once the time is up, a new ghost
+        appears and countdown clock begins ticking again.
         """
-        new_ghost = random.randint(1, settings.FPS_LIMIT * 20)
-        if not new_ghost == 5:
+        if not self.timer.running:
+            self.timer.reset(random.randint(2, 15))
             return
 
-        self.sprites.append(Enemy(self, batch=self.batch))
+        if self.timer.alarm:
+            self.timer.alarm = False
+            self.timer.running = False
+            # add a new ghost.
+            self.sprites.append(Enemy(self, batch=self.batch))
 
     def do_gravity(self, dt):
         for g in self.gravitoids:
