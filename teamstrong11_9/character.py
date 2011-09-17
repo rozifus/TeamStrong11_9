@@ -94,22 +94,34 @@ class Player(Character):
         self.image = self.anim_step_right
 
 
-class Enemy(Character):
+class Enemy(pyglet.sprite.Sprite):
     """
     An enemy is no laughing matter.
     """
     image_file = 'enemy.png'
 
+    def __init__(self, parent, *args, **kwargs):
+        self.images = ImageGrid(load(fp(self.image_file)), 1, 2)
+        super(Enemy, self).__init__(self.images[0], *args, **kwargs)
+        self.parent = parent
+        self.init()
+
     def init(self):
         self.x = 700
         self.y = 200
-        self.p_level.push_handlers(self.on_level_update)
+        self.parent.push_handlers(self.on_level_update)
 
     def on_level_update(self, dt, camera):
         """
         Keep moving left!
         """
-        self.x = self.x - 5 * dt
+        self.x = self.x - 50 * dt
         self.image = self.images[0]
 
+        if isoffscreen(self.x, self.y):
+            self.x, self.y = 700, 200
+
+def isoffscreen(x, y):
+    return (x < 0 or x > settings.RESOLUTION[0]
+            or y < 0 or y > settings.RESOLUTION[1])
 
