@@ -190,10 +190,16 @@ class Enemy(pyglet.sprite.Sprite):
         """
         player = self.parent.player
 
+
         deltax = player.x - self.x
         distance = 50 * dt
 
-        self.x = self.x + copysign(min(distance, abs(deltax)), deltax)
+        # only move the ghost guy if the player is not looking.
+        if player.orientation_right and deltax < 0:
+            pass
+        else:
+            self.x = self.x + copysign(min(distance, abs(deltax)), deltax)
+
         self.image = self.images[0]
 
         if isoffscreen(self.x, self.y):
