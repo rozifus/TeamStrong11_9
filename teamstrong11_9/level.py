@@ -64,7 +64,6 @@ class Level(event.EventDispatcher):
                 print("DED!")
 
         self.do_gravity(dt)
-        
         self.dispatch_event('on_level_update', dt, self.camera)
         self.game_strategy(dt)
 
@@ -169,13 +168,3 @@ class Level(event.EventDispatcher):
                             GhostOutcome(ghost, True))
 
 Level.register_event_type('on_level_update')
-
-def poisson(actual, mean):
-    # naive:   math.exp(-mean) * mean**actual / factorial(actual)
-
-    # iterative, to keep the components from getting too large or small:
-    p = math.exp(-mean)
-    for i in xrange(actual):
-        p *= mean
-        p /= i+1
-    return p
