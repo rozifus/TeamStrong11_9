@@ -1,5 +1,7 @@
 from __future__ import print_function
 from collections import namedtuple
+import math
+import random
 
 from pyglet import resource
 from pyglet import event
@@ -44,7 +46,7 @@ class Level(event.EventDispatcher):
 
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):
-        self.p_window.push_handlers( self.on_update, self.on_draw ) 
+        self.p_window.push_handlers( self.on_update, self.on_draw )
 
     # Pop the window's newest added handlers, hopefully this level's!
     def disconnect(self):
@@ -54,6 +56,20 @@ class Level(event.EventDispatcher):
     def on_update(self, dt):
         self.do_gravity(dt)
         self.dispatch_event('on_level_update', dt, self.camera)
+        self.game_strategy(dt)
+
+    def game_strategy(self, dt):
+        """
+        Game strategising comes into play here.
+
+        At the moment I have it so that a new enemy appears quite randomly
+        actually. Quite randomly indeed.
+        """
+        new_ghost = random.randint(1, settings.FPS_LIMIT * 20)
+        if not new_ghost == 5:
+            return
+
+        self.sprites.append(Enemy(self, batch=self.batch))
 
     def do_gravity(self, dt):
         for g in self.gravitoids:
@@ -122,14 +138,23 @@ class Level(event.EventDispatcher):
         """
 
         try:
-            minx = self.ghosts_of_christmas_past[-1].x
+            minx = self.ghosts_of_christmas_past[-1].ghost.x
         except IndexError:
             minx = settings.RESOLUTION[0]
 
         newx = minx - ghost.width - 10
         ghost.x, ghost.y = newx, 50
-        self.ghosts_of_christmas_past.append(ghost)
+        self.ghosts_of_christmas_past.append(
+                            GhostOutcome(ghost, True))
 
 Level.register_event_type('on_level_update')
 
- 
+def poisson(actual, mean):
+    # naive:   math.exp(-mean) * mean**actual / factorial(actual)
+
+    # iterative, to keep the components from getting too large or small:
+    p = math.exp(-mean)
+    for i in xrange(actual):
+        p *= mean
+        p /= i+1
+    return p
