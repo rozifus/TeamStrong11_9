@@ -10,6 +10,8 @@ import camera
 from character import Player, Enemy
 from shortcuts import *
 
+GRAVITY = 600 
+
 class Level(event.EventDispatcher):
     def __init__(self, p_window):
         self.p_window = p_window
@@ -21,12 +23,15 @@ class Level(event.EventDispatcher):
         self.batch = graphics.Batch()
         self.sprites = []
         self.player = None
+        self.surface_y = 195 
+        self.gravitoids = []
 
         self.initialize()
 
     # Setup the level
     def initialize(self):
         self.player = Player(self, batch=self.batch)
+        self.gravitoids.append(self.player)
         self.sprites.append(self.player)
 
         self.sprites.append(Enemy(self, batch=self.batch))
@@ -41,7 +46,17 @@ class Level(event.EventDispatcher):
 
     # Gets called once per tick by the game_window
     def on_update(self, dt):
+        self.do_gravity(dt)
         self.dispatch_event('on_level_update', dt, self.camera)
+
+    def do_gravity(self, dt):
+        for g in self.gravitoids:
+            if g.y <= self.surface_y:
+                g.velocity_y = 0
+                g.y = self.surface_y
+                g.touch_ground = True
+            else:
+                g.velocity_y -= GRAVITY * dt
 
     # Gets called once per tick by the game loop
     def on_draw(self):

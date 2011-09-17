@@ -16,6 +16,10 @@ def applyAnchor(img, x, y):
         img.anchor_x = x
         img.anchor_y = y
 
+class PlayerMovement:
+    def __init__(self):
+        pass
+
 class DefaultMove:
     def __init__(self, target):
         self.target = target
@@ -31,45 +35,52 @@ class DefaultMove:
         return True
 
 class JumpMove:
-    def __init__(self, target, jumppower, maxjump, control):
+    def __init__(self, target, jumppower, maxjump):
         self.target = target
         self.jumppower = jumppower 
         self.maxjump = maxjump
-        self.control = control
+        # Make sure velocity isn't removed because you are touching the ground
+        self.target.y += 2
+        # Make sure you can't double jump
+        self.target.touch_ground = False
        
     def next(self, dt, keys):
         if keys:
             if not keys[key.UP]:
                 self.maxjump = 0 
-            if keys[key.RIGHT]: self.target.x += self.control
-            if keys[key.LEFT]: self.target.x -= self.control
+            if keys[key.RIGHT]: self.target.step_right()
+            if keys[key.LEFT]: self.target.step_left()
        
         if self.maxjump > 0:
-            self.target.y += self.jumppower 
-            self.maxjump -= self.jumppower 
+            self.target.velocity_y = self.jumppower 
+            self.maxjump -= 1 
             return True
         else: 
             return False
 
 class LinearMoveX:
-    def __init__(self, target, distance, steps, rate):
+    def __init__(self, target, distance, rate):
         self.clocked = 0.0
         self.rate = rate
-        self.steps = steps
         self.distance = distance
         self.target = target
 
     def next(self, dt, keys):
+        if keys:
+            if keys[key.UP]:
+                self.target.jump()
+            if self.distance < 0:
+                if not keys[key.LEFT]:
+                    return False
+            else:
+                if not keys[key.RIGHT]:
+                    return False
+
         self.clocked += dt
-        if self.steps > 0:
-            while self.clocked > self.rate:
-                self.target.x += self.distance
-                self.clocked -= self.rate
-                self.steps -= 1
-                return True
-            return True
-        else:
-            return False
+        while self.clocked > self.rate:
+            self.target.x += self.distance
+            self.clocked -= self.rate
+        return True
 
 #------------------------------------------------------------
 # basic character.
@@ -94,19 +105,24 @@ class Character(pyglet.sprite.Sprite):
         self.anim_default = Animation.from_image_sequence(ImageGrid(load(fp(
                     self.image_file)), 1, 1), 5, True)
         applyAnchor(self.anim_default, 25, 0)
+        self.anim_default_left = self.anim_default.get_transform(True)
         super(Character, self).__init__(self.anim_default, *args, **kws)
         self.p_level = p_level
         self.movement = None
         self.keys = None
+        self.velocity_y = 0
+        self.touch_ground = True
+        self.orientation_right = True
 
     def on_level_update(self, dt, camera):
+        self.y += self.velocity_y * dt
         if self.movement:
             if not self.movement.next(dt, self.keys):
-                print("test")
-                self.movement = DefaultMove(self) 
-        else:
-            print("test2")
-            self.movement = DefaultMove(self)
+                self.movement = self.default_movement 
+                if self.orientation_right:
+                    self.image = self.anim_default
+                else: self.image = self.anim_default_left
+        
 
 class Player(Character):
     image_file = 'character.png'
@@ -115,11 +131,13 @@ class Player(Character):
         ig_step = ImageGrid(load(fp('panda_bounce_test.png')), 1, 7)
         self.animation = self.anim_default
         self.anim_step_right = Animation.from_image_sequence(
-                                ig_step, 0.1, False)
+                                ig_step, 0.1, True) 
         applyAnchor(self.anim_step_right, 25, 0)
         self.anim_step_left = self.anim_step_right.get_transform(True)
         # Convenience class for key handling, pushed to window
         self.keys = key.KeyStateHandler()
+        self.default_movement = DefaultMove(self)
+        self.movement = self.default_movement
 
         self.init()
 
@@ -130,15 +148,22 @@ class Player(Character):
         self.p_level.p_window.push_handlers( self.keys )
 
     def step_left(self):
-        self.movement = LinearMoveX(self, -3, 7, 0.1)
-        self.image = self.anim_step_left
+        self.orientation_right = False
+        if self.touch_ground:
+            self.movement = LinearMoveX(self, -3, 0.1)
+            self.image = self.anim_step_left
+        else: self.x -= 1
 
     def step_right(self):
-        self.movement = LinearMoveX(self, 3, 7, 0.1)
-        self.image = self.anim_step_right
+        self.orientation_right = True 
+        if self.touch_ground:
+            self.movement = LinearMoveX(self, 3, 0.1)
+            self.image = self.anim_step_right
+        else: self.x += 1
 
     def jump(self):
-        self.movement = JumpMove(self, 2, 20, 4)
+        if self.touch_ground:
+            self.movement = JumpMove(self, 200, 4)
 
 
 class Enemy(Character):
