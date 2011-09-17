@@ -61,7 +61,7 @@ class Level(event.EventDispatcher):
         player_box = self.player.get_collision_box()
         for e in self.enemies:
             if e.get_collision_box().isCollide(*player_box.get_values()):
-                print("DED!")
+                self.handle_the_dead(e)
 
         self.do_gravity(dt)
         self.dispatch_event('on_level_update', dt, self.camera)
@@ -75,7 +75,6 @@ class Level(event.EventDispatcher):
         appears and countdown clock begins ticking again.
         """
         if self.timer.alarm:
-            print("alarm")
             self.timer.reset(random.randint(2, 15))
             enemy = Enemy(self, batch=self.batch)
             self.sprites.append(enemy)
@@ -91,9 +90,14 @@ class Level(event.EventDispatcher):
                 g.velocity_y -= settings.GRAVITY * dt
 
     def char_punch(self, attack_box):
+        """
+        If a character punches an enemy, the enemy dies and goes to the
+        naughty corner.
+        """
+
         for e in self.enemies:
             if attack_box.isCollide(*e.get_collision_box().get_values()):
-                print("hit!")
+                self.player_is_victorious_with_punch(e)
 
     # Gets called once per tick by the game loop
     def on_draw(self):
@@ -146,6 +150,27 @@ class Level(event.EventDispatcher):
     def handle_quit(self):
         self.p_window.quit()
 
+    def player_is_victorious_with_punch(self, ghost):
+        """
+        The player has successfully punched the ghost!
+        """
+        ghost.set_dead()
+
+        punched_ghosts = filter(lambda x: not x.won, self.ghosts_of_christmas_past)
+        if len(punched_ghosts) >= 3:
+            print("Winner winner: Chickns")
+            raise SystemExit
+
+        try:
+            maxx = punched_ghosts[-1].ghost.x
+        except IndexError:
+            maxx = 0
+
+        newx = maxx + ghost.width + 10
+        ghost.x, ghost.y = newx, 50
+        self.ghosts_of_christmas_past.append(
+                            GhostOutcome(ghost, False))
+
     def handle_the_dead(self, ghost):
         """
         The ghost has hit our player! thats a bad thing.
@@ -153,12 +178,15 @@ class Level(event.EventDispatcher):
 
         If there has been three dead already. Exit the game.
         """
+        ghost.set_dead()
 
-        if len(filter(lambda x: x.won, self.ghosts_of_christmas_past)) >= 3:
+        victorious_ghosts = filter(lambda x: x.won, self.ghosts_of_christmas_past)
+        if len(victorious_ghosts) >= 3:
+            print("Dam u ded: Free times")
             raise SystemExit
 
         try:
-            minx = self.ghosts_of_christmas_past[-1].ghost.x
+            minx = victorious_ghosts[-1].ghost.x
         except IndexError:
             minx = settings.RESOLUTION[0]
 

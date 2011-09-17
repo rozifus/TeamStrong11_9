@@ -196,7 +196,6 @@ class Player(Character):
             self.movement = JumpMove(self, 200, 4)
 
     def punch(self):
-        print("Punch")
         self.p_level.char_punch(self.get_attack_box())
         
 
