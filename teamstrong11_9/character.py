@@ -8,7 +8,6 @@ from pyglet.image import ImageGrid, Animation
 import settings
 from shortcuts import *
 
-
 #---------------------------------------------------
 
 # Library code.
@@ -194,6 +193,10 @@ class Enemy(pyglet.sprite.Sprite):
         self.parent = parent
         self.init()
 
+    @property
+    def width(self):
+        return self.image.width
+
     def init(self):
         self.alive = True
         self.x = 700
@@ -213,11 +216,12 @@ class Enemy(pyglet.sprite.Sprite):
         player = self.parent.player
 
         deltax = player.x - self.x
-        if abs(deltax) < 5:
+        if abs(deltax) < settings.HIT_RADIUS:
             # ok I have hit the player.
             self.set_dead()
+            self.parent.handle_the_dead(self)
 
-        distance = 50 * dt
+        distance = settings.GHOST_SPEED * dt
 
         # only move the ghost guy if the player is not looking.
         if player.orientation_right and deltax < 0:
@@ -226,9 +230,6 @@ class Enemy(pyglet.sprite.Sprite):
             self.x = self.x + copysign(min(distance, abs(deltax)), deltax)
 
         self.image = self.images[0]
-
-        if isoffscreen(self.x, self.y):
-            self.x, self.y = 700, 200
 
 def isoffscreen(x, y):
     """

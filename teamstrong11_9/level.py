@@ -1,4 +1,5 @@
 from __future__ import print_function
+from collections import namedtuple
 
 from pyglet import resource
 from pyglet import event
@@ -9,8 +10,9 @@ import data
 import camera
 from character import Player, Enemy
 from shortcuts import *
+import settings
 
-GRAVITY = 600 
+GhostOutcome = namedtuple("GhostOutcome", "ghost won")
 
 class Level(event.EventDispatcher):
     def __init__(self, p_window):
@@ -36,6 +38,10 @@ class Level(event.EventDispatcher):
 
         self.sprites.append(Enemy(self, batch=self.batch))
 
+        # winning and losing ghosts.
+        # will be a list of GhostOutcome tuples (ghost, win? True/False)
+        self.ghosts_of_christmas_past = []
+
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):
         self.p_window.push_handlers( self.on_update, self.on_draw ) 
@@ -56,7 +62,7 @@ class Level(event.EventDispatcher):
                 g.y = self.surface_y
                 g.touch_ground = True
             else:
-                g.velocity_y -= GRAVITY * dt
+                g.velocity_y -= settings.GRAVITY * dt
 
     # Gets called once per tick by the game loop
     def on_draw(self):
@@ -94,7 +100,7 @@ class Level(event.EventDispatcher):
         """
         Move character left.
         """
-        if self.player: 
+        if self.player:
             if not self.player.movement:
                 self.player.step_left()
 
@@ -105,9 +111,24 @@ class Level(event.EventDispatcher):
         if self.player:
             if not self.player.movement:
                 self.player.step_right()
-    
+
     def handle_quit(self):
         self.p_window.quit()
+
+    def handle_the_dead(self, ghost):
+        """
+        The ghost has hit our player! thats a bad thing.
+        Put the ghost up on a victory tally somewhere..
+        """
+
+        try:
+            minx = self.ghosts_of_christmas_past[-1].x
+        except IndexError:
+            minx = settings.RESOLUTION[0]
+
+        newx = minx - ghost.width - 10
+        ghost.x, ghost.y = newx, 50
+        self.ghosts_of_christmas_past.append(ghost)
 
 Level.register_event_type('on_level_update')
 
