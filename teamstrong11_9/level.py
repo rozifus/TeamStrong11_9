@@ -24,11 +24,11 @@ class Level(event.EventDispatcher):
         self.camera = camera.Camera(0,0, winx, winy, 50)
 
         # Setup background, draw batch, spritelist, player
-        self.background = load(fp('background.png')) 
+        self.background = load(fp('background.png'))
         self.batch = graphics.Batch()
         self.sprites = []
         self.player = None
-        self.surface_y = 195 
+        self.surface_y = 195
         self.gravitoids = []
 
         self.initialize()
