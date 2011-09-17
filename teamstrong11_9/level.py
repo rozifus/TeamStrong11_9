@@ -48,10 +48,6 @@ class Level(event.EventDispatcher):
         # will be a list of GhostOutcome tuples (ghost, win? True/False)
         self.ghosts_of_christmas_past = []
 
-        enemy = Enemy(self, batch=self.batch)
-        self.sprites.append(enemy)
-        self.enemies.append(enemy)
-
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):
         self.p_window.push_handlers( self.on_update, self.on_draw )
@@ -87,7 +83,9 @@ class Level(event.EventDispatcher):
             self.timer.alarm = False
             self.timer.running = False
             # add a new ghost.
-            self.sprites.append(Enemy(self, batch=self.batch))
+            enemy = Enemy(self, batch=self.batch)
+            self.sprites.append(enemy)
+            self.enemies.append(enemy)
 
     def do_gravity(self, dt):
         for g in self.gravitoids:
