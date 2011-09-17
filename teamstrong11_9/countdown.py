@@ -24,19 +24,19 @@ class Countdown(pyglet.sprite.Sprite):
         self.x, self.y = 50, 500
 
         self.time = 0
-        self.accumulated_time = 0
-        self.running = False
+        self.accumulated_time = 100000
         self.alarm = False
-        self.steps = 0
+        self.steps = []
         self.parent.push_handlers(self.on_level_update)
 
     def reset(self, time):
         """
         Reset the countdown with the maximum time given.
         """
-        self.running = True
+        self.alarm = False
         self.time = time
-        self.steps = time / 5.
+        self.accumulated_time = 0
+        self.steps = [time / 6. * num for num in range(1, 7)]
 
     def on_level_update(self, dt, camera):
         """
@@ -44,14 +44,13 @@ class Countdown(pyglet.sprite.Sprite):
         """
         if self.accumulated_time > self.time:
             self.alarm = True
-            self.accumulated_time = 0
         else:
             self.accumulated_time += dt
 
-        try:
-            index = min(int(self.steps / self.accumulated_time), 5)
-        except ZeroDivisionError:
-            index = 0
+        index = -1
+        for index, step in enumerate(self.steps):
+            if self.accumulated_time < step:
+                break
 
         self.image = self.images[index]
 

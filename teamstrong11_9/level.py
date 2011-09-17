@@ -75,14 +75,9 @@ class Level(event.EventDispatcher):
         A countdown is created and then once the time is up, a new ghost
         appears and countdown clock begins ticking again.
         """
-        if not self.timer.running:
-            self.timer.reset(random.randint(2, 15))
-            return
-
         if self.timer.alarm:
-            self.timer.alarm = False
-            self.timer.running = False
-            # add a new ghost.
+            print("alarm")
+            self.timer.reset(random.randint(2, 15))
             enemy = Enemy(self, batch=self.batch)
             self.sprites.append(enemy)
             self.enemies.append(enemy)
