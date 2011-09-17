@@ -10,7 +10,7 @@ import camera
 from character import Player, Enemy
 from shortcuts import *
 
-GRAVITY = 600 
+GRAVITY = 600
 
 class Level(event.EventDispatcher):
     def __init__(self, p_window):
@@ -19,11 +19,11 @@ class Level(event.EventDispatcher):
         self.camera = camera.Camera(0,0, winx, winy, 50)
 
         # Setup background, draw batch, spritelist, player
-        self.background = load(fp('background.png')) 
+        self.background = load(fp('background.png'))
         self.batch = graphics.Batch()
         self.sprites = []
         self.player = None
-        self.surface_y = 195 
+        self.surface_y = 195
         self.gravitoids = []
 
         self.initialize()
@@ -38,7 +38,7 @@ class Level(event.EventDispatcher):
 
     # Connect the level's handlers, to the window's dispatchers
     def connect(self):
-        self.p_window.push_handlers( self.on_update, self.on_draw ) 
+        self.p_window.push_handlers( self.on_update, self.on_draw )
 
     # Pop the window's newest added handlers, hopefully this level's!
     def disconnect(self):
@@ -94,7 +94,7 @@ class Level(event.EventDispatcher):
         """
         Move character left.
         """
-        if self.player: 
+        if self.player:
             if not self.player.movement:
                 self.player.step_left()
 
@@ -105,7 +105,7 @@ class Level(event.EventDispatcher):
         if self.player:
             if not self.player.movement:
                 self.player.step_right()
-    
+
     def handle_quit(self):
         self.p_window.quit()
 
