@@ -135,7 +135,12 @@ class Level(event.EventDispatcher):
         """
         The ghost has hit our player! thats a bad thing.
         Put the ghost up on a victory tally somewhere..
+
+        If there has been three dead already. Exit the game.
         """
+
+        if len(filter(lambda x: x.won, self.ghosts_of_christmas_past)) >= 3:
+            raise SystemExit
 
         try:
             minx = self.ghosts_of_christmas_past[-1].ghost.x
