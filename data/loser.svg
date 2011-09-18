@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="800"
+   height="600"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="winner.svg"
+   inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/winner.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3820">
+      <stop
+         style="stop-color:#551805;stop-opacity:1;"
+         offset="0"
+         id="stop3822" />
+      <stop
+         style="stop-color:#461404;stop-opacity:1;"
+         offset="1"
+         id="stop3824" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3794">
+      <stop
+         style="stop-color:#999999;stop-opacity:1;"
+         offset="0"
+         id="stop3796" />
+      <stop
+         id="stop3802"
+         offset="0.5"
+         style="stop-color:#8e8e8e;stop-opacity:1;" />
+      <stop
+         style="stop-color:#838383;stop-opacity:1;"
+         offset="1"
+         id="stop3798" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3786">
+      <stop
+         style="stop-color:#c0fbad;stop-opacity:1;"
+         offset="0"
+         id="stop3788" />
+      <stop
+         style="stop-color:#f8fef4;stop-opacity:1;"
+         offset="1"
+         id="stop3790" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3770">
+      <stop
+         style="stop-color:#d6f1f5;stop-opacity:1;"
+         offset="0"
+         id="stop3772" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop3774" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3770"
+       id="linearGradient3776"
+       x1="222.23357"
+       y1="396.45428"
+       x2="220.21326"
+       y2="-0.53568178"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3786"
+       id="linearGradient3792"
+       x1="611.14227"
+       y1="258.33453"
+       x2="609.12201"
+       y2="17.918217"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3794"
+       id="linearGradient3800"
+       x1="557.98486"
+       y1="683.66669"
+       x2="765.0661"
+       y2="683.66669"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3794"
+       id="linearGradient3810"
+       x1="454.94928"
+       y1="751.34686"
+       x2="597.3808"
+       y2="751.34686"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3794"
+       id="linearGradient3818"
+       x1="330.70053"
+       y1="719.02197"
+       x2="473.13202"
+       y2="719.02197"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3820"
+       id="radialGradient3828"
+       cx="377.33368"
+       cy="655.66266"
+       fx="377.33368"
+       fy="655.66266"
+       r="400"
+       gradientTransform="matrix(0.6742258,-0.00757614,0.00280902,0.24998422,137.6892,716.56432)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="139.3984"
+     inkscape:cy="432.21697"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="1920"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:url(#linearGradient3776);fill-opacity:1;stroke:none"
+       id="rect3768"
+       width="801.05096"
+       height="405.0712"
+       x="-3.3002181e-08"
+       y="-1.0407646" />
+    <path
+       style="fill:#9bdc67;fill-opacity:0.66810345;stroke:none"
+       d="m 2.0203051,398.97964 c 0,0 163.6447149,-197.9899 313.1472849,-107.07617 149.50258,90.91373 112.12694,123.23861 297.99501,31.31473 185.86806,-91.92388 186.87822,-67.68022 186.87822,-67.68022 l 0,144.45182 z"
+       id="path3762"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3764"
+       d="m -1.0101525,344.4314 c 0,0 83.8426635,-219.2031 233.3452325,-128.28937 149.50258,90.91373 96.97465,-73.74114 282.84272,-165.665017 185.86806,-91.92388 284.86302,17.172594 284.86302,17.172594 l 0,332.340193 -799.06531023,-0.51067 z"
+       style="fill:url(#linearGradient3792);fill-opacity:1;stroke:none"
+       sodipodi:nodetypes="csscccc" />
+    <path
+       sodipodi:nodetypes="csscccc"
+       style="fill:#5a9f25;fill-opacity:0.66810345;stroke:none"
+       d="m 1.0101526,302.005 c 0,0 157.0022674,-16.49405 215.1624874,42.4264 104.38117,105.74557 246.86463,-85.89935 430.32499,-5.05076 37.43427,16.4968 151.52288,3.03046 151.52288,3.03046 l 2.02031,57.5787 -798.6273816,2.20255 z"
+       id="path3766"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:label="Foreground"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-452.36218)">
+    <rect
+       style="fill:url(#radialGradient3828);fill-opacity:1;stroke:none"
+       id="rect2985"
+       width="800"
+       height="200"
+       x="0"
+       y="852.36218" />
+    <rect
+       style="fill:url(#linearGradient3818);fill-opacity:1.0;stroke:none"
+       id="rect3760"
+       width="142.4315"
+       height="266.6803"
+       x="330.70053"
+       y="585.68182" />
+    <rect
+       y="650.3316"
+       x="454.94928"
+       height="202.03055"
+       width="142.4315"
+       id="rect3758"
+       style="fill:url(#linearGradient3810);fill-opacity:1.0;stroke:none" />
+    <rect
+       style="fill:url(#linearGradient3800);fill-opacity:1.0;stroke:none"
+       id="rect3756"
+       width="207.08127"
+       height="337.39099"
+       x="557.98486"
+       y="514.97119" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3118"
+       style="font-size:144px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Chancery L;-inkscape-font-specification:URW Chancery L Bold Italic"
+       transform="matrix(0.99968409,0.02513408,-0.02513408,0.99968409,-62.42166,241.56729)"><flowRegion
+         id="flowRegion3120"><rect
+           id="rect3122"
+           width="710"
+           height="334.28571"
+           x="58.57143"
+           y="180"
+           style="font-size:144px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Chancery L;-inkscape-font-specification:URW Chancery L Bold Italic" /></flowRegion><flowPara
+         id="flowPara3124">Lost it all</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3900"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:72px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3902" /><flowPara
+         id="flowPara3906"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3908"
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Charter;-inkscape-font-specification:Bitstream Charter"
+       transform="translate(-220,598.07646)"><flowRegion
+         id="flowRegion3910"><rect
+           id="rect3912"
+           width="630"
+           height="234.28572"
+           x="375.71429"
+           y="267.14285"
+           style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Bitstream Charter;-inkscape-font-specification:Bitstream Charter" /></flowRegion><flowPara
+         id="flowPara3914">U need a practise.</flowPara></flowRoot>    <g
+       id="layer1-6"
+       inkscape:label="Layer 1"
+       transform="translate(300.57911,659.5936)">
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/enemy.png"
+         transform="matrix(-1,0,0,1,177.85714,-4.5035401e-6)"
+         id="g3797">
+        <rect
+           style="fill:none;stroke:none"
+           id="rect3857"
+           width="50"
+           height="100"
+           x="38.92857"
+           y="92.719322"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           d="m 78.504464,93.848214 c -3.350752,0 -6.0625,2.702374 -6.0625,6.03125 0,0.01092 -5.8e-5,0.02034 0,0.03125 -1.838126,-0.49743 -3.801996,-0.75 -5.8125,-0.75 -3.961057,0 -7.634586,1.048186 -10.78125,2.843746 -0.639909,-2.647413 -3.0139,-4.624996 -5.875,-4.624996 -3.350752,0 -6.0625,2.702376 -6.0625,6.031246 0,2.80227 1.923393,5.13734 4.53125,5.8125 -1.602652,2.738 -2.5,5.88105 -2.5,9.21875 0,10.65121 9.247316,19.28125 20.6875,19.28125 11.440184,0 20.71875,-8.63004 20.71875,-19.28125 0,-5.18789 -2.202257,-9.90868 -5.78125,-13.375 1.802072,-1.04506 3,-2.96496 3,-5.187496 0,-3.328876 -2.711748,-6.03125 -6.0625,-6.03125 z"
+           id="path3859"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect4369"
+           width="39.285713"
+           height="54.285713"
+           x="44.642857"
+           y="137.71933"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#2e3436;stroke:none"
+           id="path4371"
+           sodipodi:cx="74.285713"
+           sodipodi:cy="118.79076"
+           sodipodi:rx="7.8571429"
+           sodipodi:ry="5.7142859"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           transform="matrix(0.40404758,-0.24824038,0.33373275,0.41746295,6.9166757,92.203865)"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           transform="matrix(1,0,0,1.375,-10.5,-48.475104)"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           sodipodi:ry="5.7142859"
+           sodipodi:rx="7.8571429"
+           sodipodi:cy="118.79076"
+           sodipodi:cx="74.285713"
+           id="path4373"
+           style="fill:#2e3436;stroke:none"
+           sodipodi:type="arc"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#2e3436;stroke:none"
+           id="path4375"
+           sodipodi:cx="74.285713"
+           sodipodi:cy="118.79076"
+           sodipodi:rx="7.8571429"
+           sodipodi:ry="5.7142859"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           transform="matrix(0.81818182,0,0,1.25,17.292208,-37.197688)"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           transform="matrix(0.27477495,0,0,0.39644663,47.072778,65.968767)"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           sodipodi:ry="5.7142859"
+           sodipodi:rx="7.8571429"
+           sodipodi:cy="118.79076"
+           sodipodi:cx="74.285713"
+           id="path4377"
+           style="fill:#eeeeec;stroke:none"
+           sodipodi:type="arc"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#eeeeec;stroke:none"
+           id="path4379"
+           sodipodi:cx="74.285713"
+           sodipodi:cy="118.79076"
+           sodipodi:rx="7.8571429"
+           sodipodi:ry="5.7142859"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           transform="matrix(0.27477495,0,0,0.39644663,60.33103,63.064578)"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           style="fill:none;stroke:#2e3436;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 64.394867,128.21681 c 0,0 6.187184,6.31346 9.848987,4.79823"
+           id="path4381"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <rect
+           y="92.719322"
+           x="88.928574"
+           height="100"
+           width="50"
+           id="rect4401"
+           style="fill:none;stroke:none"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path4403"
+           d="m 124.50446,93.848214 c -3.35075,0 -6.0625,2.702374 -6.0625,6.03125 0,0.01092 -5e-5,0.02034 0,0.03125 -1.83812,-0.49743 -3.80199,-0.75 -5.8125,-0.75 -3.96105,0 -7.63458,1.048186 -10.78125,2.843746 -0.63991,-2.647413 -3.0139,-4.624996 -5.874996,-4.624996 -3.350752,0 -6.0625,2.702376 -6.0625,6.031246 0,2.80227 1.923393,5.13734 4.53125,5.8125 -1.602652,2.738 -2.5,5.88105 -2.5,9.21875 0,10.65121 9.247316,19.28125 20.687496,19.28125 11.44019,0 20.71875,-8.63004 20.71875,-19.28125 0,-5.18789 -2.20225,-9.90868 -5.78125,-13.375 1.80208,-1.04506 3,-2.96496 3,-5.187496 0,-3.328876 -2.71174,-6.03125 -6.0625,-6.03125 z"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <rect
+           y="137.71933"
+           x="94.64286"
+           height="54.285713"
+           width="39.285713"
+           id="rect4405"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           transform="matrix(0.40404758,-0.24824038,0.33373275,0.41746295,52.916676,92.203865)"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           sodipodi:ry="5.7142859"
+           sodipodi:rx="7.8571429"
+           sodipodi:cy="118.79076"
+           sodipodi:cx="74.285713"
+           id="path4407"
+           style="fill:#2e3436;stroke:none"
+           sodipodi:type="arc"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#2e3436;stroke:none"
+           id="path4409"
+           sodipodi:cx="74.285713"
+           sodipodi:cy="118.79076"
+           sodipodi:rx="7.8571429"
+           sodipodi:ry="5.7142859"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           transform="matrix(1,0,0,1.375,35.5,-48.475104)"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           transform="matrix(0.81818182,0,0,1.25,63.292208,-37.197688)"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           sodipodi:ry="5.7142859"
+           sodipodi:rx="7.8571429"
+           sodipodi:cy="118.79076"
+           sodipodi:cx="74.285713"
+           id="path4411"
+           style="fill:#2e3436;stroke:none"
+           sodipodi:type="arc"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#eeeeec;stroke:none"
+           id="path4413"
+           sodipodi:cx="74.285713"
+           sodipodi:cy="118.79076"
+           sodipodi:rx="7.8571429"
+           sodipodi:ry="5.7142859"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           transform="matrix(0.27477495,0,0,0.39644663,93.072778,65.968767)"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           transform="matrix(0.27477495,0,0,0.39644663,106.33103,63.064578)"
+           d="m 82.142856,118.79076 c 0,3.15591 -3.517763,5.71428 -7.857143,5.71428 -4.33938,0 -7.857143,-2.55837 -7.857143,-5.71428 0,-3.15592 3.517763,-5.71429 7.857143,-5.71429 4.33938,0 7.857143,2.55837 7.857143,5.71429 z"
+           sodipodi:ry="5.7142859"
+           sodipodi:rx="7.8571429"
+           sodipodi:cy="118.79076"
+           sodipodi:cx="74.285713"
+           id="path4415"
+           style="fill:#eeeeec;stroke:none"
+           sodipodi:type="arc"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path4417"
+           d="m 110.39487,128.21681 c 0,0 6.18718,6.31346 9.84898,4.79823"
+           style="fill:none;stroke:#2e3436;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           sodipodi:type="arc"
+           style="fill:#e8b86e;fill-opacity:1;stroke:none"
+           id="path4428"
+           sodipodi:cx="145.35715"
+           sodipodi:cy="128.79076"
+           sodipodi:rx="4.2857141"
+           sodipodi:ry="4.6428571"
+           d="m 149.64286,128.79076 c 0,2.56418 -1.91878,4.64285 -4.28571,4.64285 -2.36694,0 -4.28572,-2.07867 -4.28572,-4.64285 0,-2.56418 1.91878,-4.64286 4.28572,-4.64286 2.36693,0 4.28571,2.07868 4.28571,4.64286 z"
+           transform="matrix(0.96378471,-0.26668153,0.30770947,1.1120593,-116.83663,54.386474)"
+           inkscape:transform-center-x="1.3992144"
+           inkscape:transform-center-y="-16.731113"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           inkscape:transform-center-y="-14.870212"
+           inkscape:transform-center-x="-7.7951686"
+           transform="matrix(0.95641827,0.29200015,-0.33692326,1.1035596,38.094112,-46.009177)"
+           d="m 149.64286,128.79076 c 0,2.56418 -1.91878,4.64285 -4.28571,4.64285 -2.36694,0 -4.28572,-2.07867 -4.28572,-4.64285 0,-2.56418 1.91878,-4.64286 4.28572,-4.64286 2.36693,0 4.28571,2.07868 4.28571,4.64286 z"
+           sodipodi:ry="4.6428571"
+           sodipodi:rx="4.2857141"
+           sodipodi:cy="128.79076"
+           sodipodi:cx="145.35715"
+           id="path4430"
+           style="fill:#e8b86e;fill-opacity:1;stroke:none"
+           sodipodi:type="arc"
+           inkscape:export-filename="/home/jervis/learning/games/teamstrong/TeamStrong11_9/data/character.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+      </g>
+    </g>
+    <image
+       y="402.85013"
+       x="-789.29633"
+       id="image4425"
+       xlink:href="data:image/png;base64,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
+"
+       height="100"
+       width="50"
+       transform="matrix(0.18925968,-0.98192707,0.98192707,0.18925968,0,0)" />
+  </g>
+</svg>
