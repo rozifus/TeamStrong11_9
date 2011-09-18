@@ -93,7 +93,7 @@ class GameWindow(pyglet.window.Window):
             self.menubatch.draw()
 
             # for now don't show the menu.. I hate clicking on it.
-            self.remove_menu_load_level()
+            #self.remove_menu_load_level()
 
     def create_level(self):
         self.level = Level(self)
