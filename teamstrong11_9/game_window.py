@@ -40,7 +40,8 @@ class GameWindow(pyglet.window.Window):
         # Setup a clock for frame rate
         clock.set_fps_limit(settings.FPS_LIMIT)
         # Setup updates to run once per tick
-        clock.schedule(self.update)
+        if kwargs.get('noreset', True):
+            clock.schedule(self.update)
 
         #---------------------------------------------------------
         # MENU.
@@ -106,7 +107,7 @@ class GameWindow(pyglet.window.Window):
 
     def reset(self):
         self.level.disconnect()
-        self.init()
+        self.init(noreset=False)
 
     def on_key_press(self, symbol, modifiers):
         if symbol == key.ESCAPE:
