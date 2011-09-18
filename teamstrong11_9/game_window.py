@@ -2,6 +2,7 @@ from __future__ import print_function
 from functools import partial
 
 import pyglet
+from pyglet.window import mouse, key
 
 from level import Level
 from pyglet import window
@@ -18,8 +19,10 @@ import kytten
 def show_help(window, batch, group, theme):
 
     document = pyglet.text.decode_attributed(
-            'There is no {bold True}help{bold False}\n\n'
-            'Only {align "center"}lies{align "left"}\n')
+            '{bold True}Altered Panda{bold False}[ESC back]\n\n'
+            'Try to punch [SPACE] the mutated versions of yourself.\n'
+            'The altered pandas only move when your back is turned')
+
     dialog = kytten.Dialog(
             kytten.Frame(
                 kytten.Document(document, width=300, height=150)),
@@ -30,7 +33,10 @@ def show_help(window, batch, group, theme):
 class GameWindow(pyglet.window.Window):
     def __init__(self, *args, **kwargs):
         super(GameWindow, self).__init__(*args, **kwargs)
+        self.init(*args, **kwargs)
 
+
+    def init(self, *args, **kwargs):
         # Setup a clock for frame rate
         clock.set_fps_limit(settings.FPS_LIMIT)
         # Setup updates to run once per tick
@@ -73,20 +79,21 @@ class GameWindow(pyglet.window.Window):
                 group=self.menugroup, anchor=kytten.ANCHOR_TOP_LEFT,
                 theme=theme
         )
-        #self.create_level()
+        self.do_draw = True
 
     def remove_menu_load_level(self):
-        self.on_draw = lambda: None
+        self.do_draw = False
         self.pop_handlers()
         self.create_level()
 
     def on_draw(self):
-        self.clear()
-        self.background.blit(0, 0)
-        self.menubatch.draw()
+        if self.do_draw:
+            self.clear()
+            self.background.blit(0, 0)
+            self.menubatch.draw()
 
-        # for now don't show the menu.. I hate clicking on it.
-        self.remove_menu_load_level()
+            # for now don't show the menu.. I hate clicking on it.
+            self.remove_menu_load_level()
 
     def create_level(self):
         self.level = Level(self)
@@ -96,6 +103,16 @@ class GameWindow(pyglet.window.Window):
     # Scheduled to run once per tick
     def update(self, dt):
         self.dispatch_event('on_update', dt)
+
+    def reset(self):
+        self.level.disconnect()
+        self.init()
+
+    def on_key_press(self, symbol, modifiers):
+        if symbol == key.ESCAPE:
+            return self.reset()
+
+        return super(GameWindow, self).on_key_press(symbol, modifiers)
 
     def quit(self):
         # pyglet exit variable built into pyglet.window.Window

@@ -8,6 +8,12 @@ Members: rozifus, danaran, jtrain
 License: see LICENSE.txt
 
 
+Requirements
+------------
+
+Pyglet
+Python 2.6+
+
 Running the Game
 ----------------
 

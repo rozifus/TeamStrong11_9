@@ -17,11 +17,16 @@ import settings
 
 GhostOutcome = namedtuple("GhostOutcome", "ghost won")
 
+def delete_sprites(sprites):
+    for sprite in reversed(sprites):
+        sprite.delete()
+
 class Level(event.EventDispatcher):
     def __init__(self, p_window):
         self.p_window = p_window
         winx, winy = self.p_window.get_size()
         self.camera = camera.Camera(0,0, winx, winy, 50)
+        self.over = False
 
         # Setup background, draw batch, spritelist, player
         self.background = load(fp('background.png'))
@@ -61,11 +66,20 @@ class Level(event.EventDispatcher):
         player_box = self.player.get_collision_box()
         for e in self.enemies:
             if e.get_collision_box().isCollide(*player_box.get_values()):
-                self.handle_the_dead(e)
+                try:
+                    self.handle_the_dead(e)
+                except ValueError:
+                    # lost the game!
+                    self.batch = graphics.Batch()
+                    self.sprites[:] = []
+                    self.background = load(fp('loser.png'))
+                    self.over = True
 
         self.do_gravity(dt)
-        self.dispatch_event('on_level_update', dt, self.camera)
-        self.game_strategy(dt)
+
+        if not self.over:
+            self.dispatch_event('on_level_update', dt, self.camera)
+            self.game_strategy(dt)
 
     def game_strategy(self, dt):
         """
@@ -75,7 +89,10 @@ class Level(event.EventDispatcher):
         appears and countdown clock begins ticking again.
         """
         if self.timer.alarm:
-            self.timer.reset(random.randint(2, 15))
+            if self.enemies and self.enemies[-1].x == 700:
+                return
+
+            self.timer.reset(random.randint(2, 5))
             enemy = Enemy(self, batch=self.batch)
             self.sprites.append(enemy)
             self.enemies.append(enemy)
@@ -94,10 +111,18 @@ class Level(event.EventDispatcher):
         If a character punches an enemy, the enemy dies and goes to the
         naughty corner.
         """
+        if not self.player.orientation_right:
+            return
 
         for e in self.enemies:
             if attack_box.isCollide(*e.get_collision_box().get_values()):
-                self.player_is_victorious_with_punch(e)
+                try:
+                    self.player_is_victorious_with_punch(e)
+                except TypeError:
+                    self.batch = graphics.Batch()
+                    self.sprites[:] = []
+                    self.over = True
+                    self.background = load(fp('winner.png'))
 
     # Gets called once per tick by the game loop
     def on_draw(self):
@@ -148,7 +173,7 @@ class Level(event.EventDispatcher):
                 self.player.step_right()
 
     def handle_quit(self):
-        self.p_window.quit()
+        self.p_window.reset()
 
     def player_is_victorious_with_punch(self, ghost):
         """
@@ -158,8 +183,7 @@ class Level(event.EventDispatcher):
 
         punched_ghosts = filter(lambda x: not x.won, self.ghosts_of_christmas_past)
         if len(punched_ghosts) >= 3:
-            print("Winner winner: Chickns")
-            raise SystemExit
+            raise TypeError
 
         try:
             maxx = punched_ghosts[-1].ghost.x
@@ -182,8 +206,7 @@ class Level(event.EventDispatcher):
 
         victorious_ghosts = filter(lambda x: x.won, self.ghosts_of_christmas_past)
         if len(victorious_ghosts) >= 3:
-            print("Dam u ded: Free times")
-            raise SystemExit
+            raise ValueError
 
         try:
             minx = victorious_ghosts[-1].ghost.x

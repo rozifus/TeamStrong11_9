@@ -42,6 +42,9 @@ class Countdown(pyglet.sprite.Sprite):
         """
         Work out if I need to change my image to the next bar bit.
         """
+        if self.parent.enemies and self.parent.enemies[-1].x == 700:
+            return
+
         if self.accumulated_time > self.time:
             self.alarm = True
         else:
